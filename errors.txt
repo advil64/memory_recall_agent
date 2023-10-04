@@ -1,0 +1,20 @@
+When trying to run human agent python script
+
+(recall_agent) ac1771@cheese:~/Desktop/memory_recall_agent$ /common/home/ac1771/.conda/envs/recall_agent/bin/python /common/home/ac1771/Desktop/memory_recall_agent/dm_memorytasks/human_agent.py
+pygame 2.5.2 (SDL 2.28.2, Python 3.11.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+libGL error: MESA-LOADER: failed to open swrast: /usr/lib/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri)
+libGL error: failed to load driver: swrast
+X Error of failed request:  BadValue (integer parameter out of range for operation)
+  Major opcode of failed request:  150 (GLX)
+  Minor opcode of failed request:  3 (X_GLXCreateContext)
+  Value in failed request:  0x0
+  Serial number of failed request:  155
+  Current serial number in output stream:  156
+
+Here's the issue:
+1. Ilab doesn't support swrast drivers out of the box, I need to install ubuntu stuff on it to work
+2. I don't have a graphics card so there's no way to run this on my computer, additionally I can't run docker
+
+Solution: Give me an ilab with admin access so I can install the appropriate graphics drivers or give me a machine 
+that has a graphics card
