@@ -35,5 +35,6 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 # you login.
 systemctl --user start docker
 # verify that docker started with no errors
-systemctl --user status docker
+# systemctl --user status docker
 docker pull gcr.io/deepmind-environments/dm_memorytasks:v1.0.1
+docker run --rm -it -p 10000:10000/tcp gcr.io/deepmind-environments/dm_memorytasks:v1.0.1

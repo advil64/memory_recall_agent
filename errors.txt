@@ -18,3 +18,31 @@ Here's the issue:
 
 Solution: Give me an ilab with admin access so I can install the appropriate graphics drivers or give me a machine 
 that has a graphics card
+
+
+
+# if __name__ == "__main__":
+#     # Example usage of the PsychLabWrapper
+#     psychlab_config = {
+#         # Define your PsychLab configuration here
+#         'num_actions': 4,
+#         'observation_shape': (84, 84, 3)
+#     }
+    
+#     env = PsychLabWrapper(psychlab_config)
+    
+#     # Run a simple random policy for a few episodes
+#     for _ in range(3):
+#         obs = env.reset()
+#         done = False
+#         total_reward = 0
+#         while not done:
+#             action = env.action_space.sample()  # Random action
+#             obs, reward, done, _ = env.step(action)
+#             total_reward += reward
+#             env.render()
+#         print("Episode reward:", total_reward)
+    
+#     env.close()
+
+{'STRAFE_LEFT_RIGHT': array(-0.57910073), 'MOVE_BACK_FORWARD': array(-0.47725658), 'LOOK_LEFT_RIGHT': array(-0.81568905), 'LOOK_DOWN_UP': array(0.35087189)}
