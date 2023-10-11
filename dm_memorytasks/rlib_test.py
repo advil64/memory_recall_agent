@@ -1,8 +1,12 @@
 import gymnasium as gym
+import ray
 from ray.rllib.algorithms.impala import ImpalaConfig
 import numpy as np
 
 import dm_memorytasks
+
+context = ray.init()
+print(context.dashboard_url)
 
 class PsychLab(gym.Env):
     def __init__(self, env_config):
@@ -37,8 +41,8 @@ class PsychLab(gym.Env):
 
 # Create an RLlib Algorithm instance
 config = ImpalaConfig()
-# config = config.training(lr=0.0003, train_batch_size=512)  
-# config = config.resources(num_gpus=0, num_learner_workers=1)
+# config = config.training(lr=0.0003, train_batch_size=52)  
+config = config.resources(num_gpus=0, num_learner_workers=1)
 
 # Build a Algorithm object from the config and run 1 training iteration.
 algo = config.build(env=PsychLab)

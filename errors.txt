@@ -46,3 +46,5 @@ that has a graphics card
 #     env.close()
 
 {'STRAFE_LEFT_RIGHT': array(-0.57910073), 'MOVE_BACK_FORWARD': array(-0.47725658), 'LOOK_LEFT_RIGHT': array(-0.81568905), 'LOOK_DOWN_UP': array(0.35087189)}
+
+Imapala inherently needs to be able to connect multiple threads to its environment, however when multiple processes try to connect to the psychlab it causes an issue

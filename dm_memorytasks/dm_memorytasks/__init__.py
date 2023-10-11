@@ -14,8 +14,8 @@
 # ============================================================================
 """Python utilities for running dm_memorytasks."""
 
-from torchbeast.dm_memorytasks import _load_environment
-from torchbeast.dm_memorytasks._version import __version__
+from dm_memorytasks import _load_environment
+from dm_memorytasks._version import __version__
 
 EnvironmentSettings = _load_environment.EnvironmentSettings
 
