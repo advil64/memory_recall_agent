@@ -34,7 +34,7 @@ flags.DEFINE_string(
     'If None, uses the default dm_memorytask name')
 
 flags.DEFINE_integer('seed', 123, 'Environment seed.')
-flags.DEFINE_string('level_name', 'spot_diff_extrapolate',
+flags.DEFINE_string('level_name', 'spot_diff_train',
                     'Name of memory task to run.')
 
 _FRAMES_PER_SECOND = 30
@@ -106,7 +106,7 @@ def main(_):
         score += timestep.reward
         logging.info('Total score: %1.1f, reward: %1.1f', score,
                      timestep.reward)
-      clock.tick(_FRAMES_PER_SECOND)
+      clock.tick(_FRAMES_PER_SECOND) 
 
 
 if __name__ == '__main__':
