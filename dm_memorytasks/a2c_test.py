@@ -30,7 +30,7 @@ class PsychLab(gym.Env):
     def __init__(self, env_config):
 
         # Initialize the PsychLab environment with the provided config
-        env_settings = dm_memorytasks.EnvironmentSettings(seed=123, level_name='spot_diff_extrapolate')
+        env_settings = dm_memorytasks.EnvironmentSettings(seed=123, level_name='spot_diff_holdout_small')
         
         self.env = dm_memorytasks.load_from_docker(name='gcr.io/deepmind-environments/dm_memorytasks:v1.0.1', settings=env_settings)        
         self.action_spec = self.env.action_spec()
@@ -96,5 +96,15 @@ class FigureRecorderCallback(BaseCallback):
 env = PsychLab({})
 model = A2C("CnnPolicy", env, verbose=1, tensorboard_log="./sb3_graphs/")
 model.set_logger(new_logger)
-model.load("a2c_spot_diff")
-model.learn(total_timesteps=1000, log_interval=4, callback=FigureRecorderCallback())
+model.load("/common/home/ac1771/Desktop/memory_recall_agent/dm_memorytasks/a2c_spot_diff.zip")
+
+total_reward = 0
+
+obs, _info = env.reset()
+
+while total_reward < 1:
+    action, _states = model.predict(obs)
+    obs, rewards, is_trunc, dones, info = env.step(action)
+    if rewards:
+        total_reward += rewards
+        print(f'Current total reward: {total_reward}')
