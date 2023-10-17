@@ -81,5 +81,16 @@ env = dm_memorytasks.load_from_docker(settings)
 ## Rutgers ILabs
 If you are running this code on the Rutgers Ilabs, you can run the `dockerrun.bash` script which will pull the container and set it up for you
 
+## Setting up python environment:
+Recommend setup for conda environment: python=3.8
+`conda create -n myenv python=3.8`
+When you run human agent or random agent you get numpy error: Solve it by changing the `np.object -> object` 
+Install all the above dependency before install stable baseline
+Install absl 
+`conda install -c anaconda absl-py`
+Install gymnasium 
+`conda install -c conda-forge gymnasium`
+
+
 ## Stable Baselines
 To train the A2C agent, we use the framework provided by stable baselines 3 (https://stable-baselines3.readthedocs.io/en/master/modules/a2c.html), please install the library before you run either `a2c_invis_builds.py` or `a2c_spot_diff.py`.
