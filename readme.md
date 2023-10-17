@@ -84,11 +84,11 @@ If you are running this code on the Rutgers Ilabs, you can run the `dockerrun.ba
 ## Setting up python environment:
 Recommend setup for conda environment: python=3.8
 `conda create -n myenv python=3.8`
-# When you run human agent or random agent you get numpy error: Solve it by changing the `np.object -> object` 
-# Install all the above dependency before install stable baseline
-# Install absl 
+### When you run human agent or random agent you get numpy error: Solve it by changing the `np.object -> object` 
+### Install all the above dependency before install stable baseline
+### Install absl 
 `conda install -c anaconda absl-py`
-# Install gymnasium 
+### Install gymnasium 
 `conda install -c conda-forge gymnasium`
 
 
